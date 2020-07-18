@@ -29,15 +29,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  in order to build a stateful class component one must initialize it as a: class extends React.component {} implement a constructor function within: constructor() {} and a super call within that constructor function: super().  inside the constructor function after super call: this.state({ value: [] })
 
 2. Describe the different phases of the component lifecycle.
-
+  component mount--this is the initial render of the component to the dom
+  component update--this is when state or props are updated within the component, causing re render
+  component unmount--this is the 'death' of the component when it dismounts from the dom
 3. Demonstrate an understanding of class component lifecycle methods.
-
+  componentDidMount() is a method that will be called upon initial render.  It is here that one can make an axios call for example to set some data to state
+  componentDidUpdate() is another where one can insert an if statement (necessary to ensure the method does not infinitely loop) and can be used for further updates to state/ props
 4. Define stateful logic.
-
+  stateful logic is that which is logic codified that directly influences data held within state.  handleChanges and handleSubmit functions in forms are common examples of stateful logic
 5. Describe how to test a React component with React Testing Library.
-
+  in order to test a react component with React Testing Library, one must make a test.js file and within it use a test function to arrange, act, and assert.
+  arrange the render of the component and any methods needed like const { getByText } = render(<App />)
+  act to find an element, such as using the text in a <h1> element to assign it to a variable
+  assert to ensure the the element in the act phase is in the document or rendered, 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
