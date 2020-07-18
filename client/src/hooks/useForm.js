@@ -14,9 +14,9 @@ export const useForm = (initialValue) => {
         setShowSuccessMessage(true);
     };
 
-    useEffect(() => {
-        console.log(values.firstName)
-    }, [values])
+    // useEffect(() => {
+    //     console.log(values.firstName)
+    // }, [values])
     
     return [values, handleChanges, handleSubmit, showSuccessMessage]
 }
