@@ -30,3 +30,19 @@ describe('tests input', () => {
         expect(input.value).toBe('Jeremy')
     })
 })
+
+describe('checks the submit button', () => {
+    it('changes an input and clicks submit button', () => {
+        const { queryByTestId, getByDisplayValue } = render(<CheckoutForm />)
+
+        const input = queryByTestId('firstName-input');
+        fireEvent.change(input, { target: { value: 'Jeremy' } });
+        expect(getByDisplayValue(/jeremy/i)).toBeInTheDocument()
+
+        const submitButton = queryByTestId('checkout')
+        fireEvent.click(submitButton)
+
+        const successMessage = queryByTestId('successMessage')
+        expect(successMessage).toBeInTheDocument()
+    })
+})
